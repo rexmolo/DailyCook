@@ -23,6 +23,10 @@ Route::get('/', function () {
 //        'laravelVersion' => Application::VERSION,
 //        'phpVersion' => PHP_VERSION,
 //    ]);
+    return Inertia::render('NewWelcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+    ]);
 
 });
 
