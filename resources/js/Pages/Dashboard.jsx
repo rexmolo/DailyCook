@@ -6,6 +6,7 @@ import {
     MenuUnfoldOutlined,
     UploadOutlined,
     UserOutlined,
+    ContainerOutlined,
     VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
@@ -34,7 +35,7 @@ export default function Dashboard({ auth }) {
             {/*</div>*/}
 
             <Layout>
-                <Sider trigger={null} collapsible collapsed={collapsed}>
+                <Sider trigger={null} collapsible collapsed={collapsed} className={`h-screen`}>
                     <div className="logo-vertical" />
                     <Menu
                         theme="dark"
@@ -44,17 +45,22 @@ export default function Dashboard({ auth }) {
                             {
                                 key: '1',
                                 icon: <UserOutlined />,
-                                label: 'nav 1',
+                                label: 'Ingredients',
                             },
                             {
                                 key: '2',
-                                icon: <VideoCameraOutlined />,
-                                label: 'nav 2',
+                                icon: <ContainerOutlined />,
+                                label: 'Recipes',
                             },
                             {
                                 key: '3',
                                 icon: <UploadOutlined />,
-                                label: 'nav 3',
+                                label: 'Menu',
+                            },
+                            {
+                                key: '4',
+                                icon: <UploadOutlined />,
+                                label: 'Purchasing',
                             },
                         ]}
                     />
@@ -70,11 +76,12 @@ export default function Dashboard({ auth }) {
                             type="text"
                             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
                             onClick={() => setCollapsed(!collapsed)}
-                            style={{
-                                fontSize: '16px',
-                                width: 64,
-                                height: 64,
-                            }}
+                            className='text-base w-16 h-16 ml-3'
+                            // style={{
+                            //     fontSize: '16px',
+                            //     width: 64,
+                            //     height: 64,
+                            // }}
                         />
                     </Header>
                     <Content
