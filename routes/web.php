@@ -30,6 +30,12 @@ Route::get('/', function () {
 
 });
 
+Route::get('/ingredients', function () {
+
+    Route::get('');
+
+})->middleware(['auth', 'verified']);
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
