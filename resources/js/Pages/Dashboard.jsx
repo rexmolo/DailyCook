@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    UploadOutlined,
     UserOutlined,
     ContainerOutlined,
-    VideoCameraOutlined,
+    UnorderedListOutlined,
+    ShoppingCartOutlined
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
 const { Header, Sider, Content } = Layout;
@@ -54,12 +54,12 @@ export default function Dashboard({ auth }) {
                             },
                             {
                                 key: '3',
-                                icon: <UploadOutlined />,
+                                icon: <UnorderedListOutlined />,
                                 label: 'Menu',
                             },
                             {
                                 key: '4',
-                                icon: <UploadOutlined />,
+                                icon: <ShoppingCartOutlined />,
                                 label: 'Purchasing',
                             },
                         ]}

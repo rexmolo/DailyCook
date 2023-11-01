@@ -32,9 +32,10 @@ Route::get('/', function () {
 
 Route::get('/ingredients', function () {
 
-    Route::get('');
+    return 'aaa';
 
 })->middleware(['auth', 'verified']);
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
