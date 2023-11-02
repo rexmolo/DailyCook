@@ -32,7 +32,7 @@ Route::get('/', function () {
 
 Route::get('/ingredients', function () {
 
-    return 'aaa';
+    return 'ingredients page';
 
 })->middleware(['auth', 'verified']);
 

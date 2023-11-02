@@ -15,6 +15,8 @@ const { Header, Sider, Content } = Layout;
 export default function Dashboard({ auth }) {
 
     const [collapsed, setCollapsed] = useState(false);
+    const [content, setContent] = useState('ingredients');
+
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -46,21 +48,33 @@ export default function Dashboard({ auth }) {
                                 key: '1',
                                 icon: <UserOutlined />,
                                 label: 'Ingredients',
+                                onClick: function ({ item, key, keyPath, selectedKeys, domEvent }) {
+                                    setContent('ingredients');
+                                }
                             },
                             {
                                 key: '2',
                                 icon: <ContainerOutlined />,
                                 label: 'Recipes',
+                                onClick: function ({ item, key, keyPath, domEvent }) {
+                                    setContent('Recipes');
+                                }
                             },
                             {
                                 key: '3',
                                 icon: <UnorderedListOutlined />,
                                 label: 'Menu',
+                                onClick: function ({ item, key, keyPath, domEvent }) {
+                                    setContent('Menu');
+                                }
                             },
                             {
                                 key: '4',
                                 icon: <ShoppingCartOutlined />,
                                 label: 'Purchasing',
+                                onClick: function ({ item, key, keyPath, domEvent }) {
+                                    setContent('Purchasing');
+                                }
                             },
                         ]}
                     />
@@ -92,7 +106,7 @@ export default function Dashboard({ auth }) {
                             background: colorBgContainer,
                         }}
                     >
-                        Content
+                        {content}
                     </Content>
                 </Layout>
             </Layout>
